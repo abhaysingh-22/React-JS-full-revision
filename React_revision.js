@@ -329,3 +329,23 @@ function useCounter() {
 
 // 33. Common Interview Patterns (lifting state, controlled inputs, prop drilling, memoization)
 // Interview me aksar yeh patterns pooche jaate hain: lifting state up, controlled/uncontrolled inputs, prop drilling (props ko deeply pass karna), memoization (performance optimize karna).
+
+
+
+
+
+
+
+
+
+
+// React Redux ka use data ko centralize (ek jagah pe store) aur manage karne ke liye hota hai, taaki poore React app me data easily share aur update ho sake.
+// Isme important concepts hain: actions, reducers, store, useSelector, useDispatch.
+
+//Thoda clarify karne layak points:
+
+// Actions: Ye sirf ek object hote hain jo batata hai "kya hona chahiye" (for example: { type: 'INCREMENT' }). Action me aap sirf intention batate hain, logic nahi likhte.
+// Reducers: Reducer ek function hota hai jo purane state aur action ko input leta hai aur naya state return karta hai. Iska kaam "valuable things" yaani updated state banana hai, lekin yahan "garbage out" ka matlab nahi hai—ye sirf state ko update karta hai based on action.
+// Store: Ye Redux ka global data store hai, jisme poore app ka state rehta hai.
+// useSelector: Ye hook use hota hai Redux store se specific data read karne ke liye.
+// useDispatch: Iska use Redux store ko action bhejne (dispatch karne) ke liye hota hai, taaki state update ho sake.
