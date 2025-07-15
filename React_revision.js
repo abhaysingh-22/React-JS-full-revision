@@ -349,3 +349,54 @@ function useCounter() {
 // Store: Ye Redux ka global data store hai, jisme poore app ka state rehta hai.
 // useSelector: Ye hook use hota hai Redux store se specific data read karne ke liye.
 // useDispatch: Iska use Redux store ko action bhejne (dispatch karne) ke liye hota hai, taaki state update ho sake.
+
+
+
+
+
+
+
+// Difference between axios and fetch:
+
+/*Syntax and Ease of Use:
+Axios provides a simpler and cleaner syntax for making HTTP requests.
+Fetch uses Promises, which require additional .then() and .catch() blocks, making the code slightly more verbose.
+
+
+Browser Support:
+Axios supports older browsers (including Internet Explorer) without any additional setup.
+Fetch is a modern browser API and is not supported in Internet Explorer without using a polyfill.
+
+
+Interceptors:
+Axios allows the use of interceptors to modify requests and responses globally, which is helpful for adding authentication tokens or handling global errors.
+Fetch does not support interceptors natively; this functionality must be manually implemented.
+
+
+Timeout Handling:
+Axios supports request timeouts out of the box by passing a timeout option.
+Fetch does not support timeout natively; you need to implement it manually using AbortController.
+
+
+Automatic JSON Parsing:
+Axios automatically transforms JSON response data, so there's no need to call .json() on the response.
+Fetch requires you to manually parse the response using .json().
+
+
+Request Cancellation:
+Axios supports request cancellation using its own method or AbortController.
+Fetch only supports cancellation using AbortController, and this must be implemented manually.
+
+
+Data Transformation:
+Axios provides built-in support for transforming requests and responses (e.g., modifying headers or formatting data).
+Fetch requires manual data transformation, which increases the code complexity.
+
+
+File Uploads (FormData Support):
+Both Axios and Fetch support file uploads using FormData, but Axios handles it in a more convenient way.
+Lightweight and Built-in Nature:
+
+
+Axios is an external library that needs to be installed (e.g., using npm install axios).
+Fetch is a built-in API in modern browsers and doesn’t require installation.*/
