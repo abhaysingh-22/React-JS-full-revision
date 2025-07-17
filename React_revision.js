@@ -56,6 +56,44 @@ class Demo extends React.Component {
   componentWillUnmount() { /* Unmount */ }
   render() { return <div>Demo</div>; }
 }
+/*Great, thanks for clarifying! In React, the concept you’re referring to is *component lifecycle*.
+
+---
+
+### React Lifecycle
+
+#### 1. *Class Components (Lifecycle Methods)*
+- *Mounting:*  
+  - constructor()
+  - componentDidMount()
+- *Updating:*  
+  - componentDidUpdate(prevProps, prevState)
+- *Unmounting:*  
+  - componentWillUnmount()
+
+#### 2. *Functional Components (Hooks)*
+- *useEffect:*  
+  - Handles side effects, and can mimic mounting, updating, and unmounting behavior depending on the dependency array.
+  js
+  useEffect(() => {
+    // This runs on mount and update
+    return () => {
+      // This cleanup runs on unmount
+    };
+  }, [dependencies]);
+  
+
+---
+
+*Summary:*  
+- In class components: Lifecycle methods let you run code at specific points in a component’s life.
+- In functional components: useEffect is the main way to handle lifecycle events.
+
+If you want examples or a deeper dive into any lifecycle phase, let me know!
+*/
+
+
+
 
 // 8. useEffect Hook
 // useEffect kya hai? Functional component me side effects (API call, timer, etc.) handle karne ke liye.
@@ -184,6 +222,38 @@ function CallbackDemo({ onClick }) {
   const memoizedClick = React.useCallback(() => onClick(), [onClick]);
   return <button onClick={memoizedClick}>Click</button>;
 }
+
+/*In React, *useMemo* and *memo* are two different APIs used for optimizing performance by preventing unnecessary recalculations and re-renders. Here’s a clear explanation of each:
+
+---
+
+### useMemo
+
+- *Type:* React Hook
+- *Purpose:* Memoizes the result of a function (usually a calculation or derived value) inside a component.
+- *Usage:*  
+  js
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+  
+- *What it does:*  
+  - Only recalculates the value when its dependencies change (a or b).
+  - Used to avoid expensive calculations on every render.
+
+---
+
+### memo
+
+- *Type:* Higher-order Component (HOC)
+- *Purpose:* Memoizes the rendering of a component to avoid unnecessary re-renders.
+- *Usage:*  
+  js
+  const MemoizedComponent = React.memo(MyComponent);
+  
+- *What it does:*  
+  - Only re-renders the component if its props change.
+  - Useful for functional components that render the same output given the same props.
+
+*/
 
 // 18. React Router (Basics of Routing, useNavigate, useParams)
 // React Router se SPA me navigation possible hota hai, bina page reload ke.
@@ -400,3 +470,6 @@ Lightweight and Built-in Nature:
 
 Axios is an external library that needs to be installed (e.g., using npm install axios).
 Fetch is a built-in API in modern browsers and doesn’t require installation.*/
+
+
+
